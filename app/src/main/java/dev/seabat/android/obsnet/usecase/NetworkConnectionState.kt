@@ -1,8 +1,7 @@
 package dev.seabat.android.obsnet.usecase
 
-interface NetworkConnectionState {
-    sealed interface NetworkConnectionState {
-        object Available : NetworkConnectionState
-        object Unavailable : NetworkConnectionState
-    }
+sealed class NetworkConnectionState(val name: String) {
+
+    object Available : NetworkConnectionState("Available")
+    object Unavailable : NetworkConnectionState("Unavailable")
 }
